@@ -1,6 +1,10 @@
 import { Response } from './types'
 
-export async function handler(): Promise<Response> {
+interface StuffResponse extends Response {
+  body: string
+}
+
+export async function handler(): Promise<StuffResponse> {
   return {
     statusCode: 200,
     body: `Hi!`,
