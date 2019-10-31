@@ -65,7 +65,9 @@ Follow these steps to create a new API endpoint in this codebase:
 
 - test the happy path, and the cases of a timeout error from the external dogs-list endpoint.
 
-- submit a PR in your repository, with a descriptive message, and no more than a few commits (each with a clear purpose).
+- run `yarn lint` and `yarn build` to check for warnings and errors. The challenge is not complete until issues are addressed, either through fixing the code, or leaving a comment in the code to explain why it is not fixed. Do not change the lint or Typescript configuration, as part of the challenge is to work within a set of rules, to simulate real working conditions.
+
+- submit a [pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) in your repository, with a descriptive message, and no more than a few commits (each with a clear purpose).
 
 - in your private repository, add `paulswebapps` as a collaborator, and send an email to `paul@extend.com` with a link to your repository.
 
