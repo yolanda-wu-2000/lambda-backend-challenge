@@ -59,11 +59,11 @@ Follow these steps to create a new API endpoint in this codebase:
 
 - Use `node-fetch` (already installed) to pull from the [dogs-list endpoint](https://dog.ceo/api/breeds/list/all). Organize the code in a way that could scale if the codebase were to grow.
 
-- the endpoint handler should return a list of all breeds as a flat array of strings, with each sub-breed getting a separate element. For example, both `english sheepdog` and `shetland sheepdog` should be on the list.
+- the endpoint handler should return a response object, containing a list of all breeds as a flat array of strings, with each sub-breed getting a separate element. For example, both `english sheepdog` and `shetland sheepdog` should be on the list.
 
 - in your handler tests `breeds-get.test.ts`, create a way to mock the results of the external API call, so the handler can be tested without an internet connection.
 
-- test the happy path, and the cases of a timeout error from the external dogs-list endpoint.
+- test the happy path, and the case of the external call timing out.
 
 - run `yarn lint` and `yarn build` to check for warnings and errors. The challenge is not complete until issues are addressed, either through fixing the code, or leaving a comment in the code to explain why it is not fixed. Do not change the lint or Typescript configuration, as part of the challenge is to work within a set of rules, to simulate real working conditions.
 
