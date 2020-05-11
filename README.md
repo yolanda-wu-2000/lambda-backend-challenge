@@ -69,7 +69,7 @@ Follow these steps to create a new API endpoint in this codebase:
 
 - submit a [pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) in your repository, with a descriptive message, and no more than a few commits (each with a clear purpose).
 
-- in your private repository, add `paulswebapps` as a collaborator, and send an email to `paul@extend.com` with a link to your repository.
+- in your private repository, add `anthgur` as a collaborator, and send an email to `anthony@extend.com` with a link to your repository.
 
 - before the next interview, we will provide PR feedback, to give you a chance to improve your solution before the call.
 
