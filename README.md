@@ -57,13 +57,17 @@ Follow these steps to create a new API endpoint in this codebase:
 
 - in `src/lambdas`, add a new `handler` module, in a file called something like `breeds-get.ts`, along with a `breeds-get.test.ts`.
 
-- Use `node-fetch` (already installed) to pull from the [dogs-list endpoint](https://dog.ceo/api/breeds/list/all). Organize the code in a way that could scale if the codebase were to grow.
+- use [`node-fetch`](https://github.com/node-fetch/node-fetch) (already installed) to pull from the [dogs-list endpoint](https://dog.ceo/api/breeds/list/all). 
 
-- the endpoint handler should return a response object, containing a list of all breeds as a flat array of strings, with each sub-breed getting a separate element. For example, both `english sheepdog` and `shetland sheepdog` should be on the list.
+- organize the code in a way that could scale if the codebase were to grow.
+
+- the endpoint handler should return a response object, containing a list of all breeds as a flat array of strings. If a breed does not have sub-breeds include the breed. If a breed has sub-breeds include each sub-breed as a separate element. For example, `english sheepdog`, `shetland sheepdog` and `beagle` should all be on the list. However, `sheepdog` should not be included.
 
 - in your handler tests `breeds-get.test.ts`, create a way to mock the results of the external API call, so the handler can be tested without an internet connection.
 
-- test the happy path, and the case of the external call timing out.
+- test the happy path.
+
+- test the case of the external call timing out.
 
 - run `yarn lint` and `yarn build` to check for warnings and errors. The challenge is not complete until issues are addressed, either through fixing the code, or leaving a comment in the code to explain why it is not fixed. Do not change the lint or Typescript configuration, as part of the challenge is to work within a set of rules, to simulate real working conditions.
 
@@ -73,4 +77,4 @@ Follow these steps to create a new API endpoint in this codebase:
 
 - before the next interview, we will provide PR feedback, to give you a chance to improve your solution before the call.
 
-- Feel free to ask questions, as we want to simulate working with the team.
+- feel free to ask questions, as we want to simulate working with the team.
