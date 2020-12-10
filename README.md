@@ -17,8 +17,8 @@ This is bare-bones version of our backend codebase, where we ask candidates to m
 - Clone the repository on the local machine.
 
   ```bash
-  git clone https://github.com/helloextend/lambda-scaffold.git
-  cd lambda-scaffold
+  git clone https://github.com/helloextend/lambda-backend-challenge.git
+  cd lambda-backend-challenge
   ```
 
 - Copy this repository to your own private repository on GitHub.
