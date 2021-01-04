@@ -29,17 +29,21 @@ function parseBreeds(message: object): string[] {
   return breeds
 }
 
-export async function handler(): Promise<BreedsResponse> {
-  const res = await fetch('https://dog.ceo/api/breeds/list/all')
-  if (!res.ok) {
-    throw new Error(`HTTP Error Response: ${res.status} ${res.statusText}`)
-  }
+export async function handler(): Promise<BreedsResponse | Error> {
+  try {
+    const res = await fetch('https://dog.ceo/api/breeds/list/all')
+    if (!res.ok) {
+      return Promise.reject(new Error(`HTTP Error Response: ${res.status} ${res.statusText}`))
+    }
 
-  const json = await res.json()
-  const breedsMessage: string[] = await parseBreeds(json.message)
-  const payload: Breeds = { message: breedsMessage, status: json.status as string }
-  return {
-    statusCode: 200,
-    body: payload,
+    const json = await res.json()
+    const breedsMessage: string[] = await parseBreeds(json.message)
+    const payload: Breeds = { message: breedsMessage, status: json.status as string }
+    return {
+      statusCode: res.status,
+      body: payload,
+    }
+  } catch (error) {
+    return error
   }
 }

@@ -19,22 +19,20 @@ describe('breeds-get handler', () => {
     status: 'success',
   }
 
-  beforeEach(() => {
-    mockedFetch.mockResolvedValueOnce({
-      status: 200,
-      statusText: 'OK',
-      ok: true,
-      json: () => {
-        return mockPayload
-      },
-    })
+  mockedFetch.mockResolvedValueOnce({
+    status: 200,
+    statusText: 'OK',
+    ok: true,
+    json: () => {
+      return mockPayload
+    },
+  })
 
-    mockedFetch.mockResolvedValueOnce({
-      status: 408,
-      statusText: 'Request Timeout',
-      ok: false,
-      json: {},
-    })
+  mockedFetch.mockResolvedValueOnce({
+    status: 408,
+    statusText: 'Request Timeout',
+    ok: false,
+    json: {},
   })
 
   it('returns payload from fetch request', async () => {
@@ -43,6 +41,6 @@ describe('breeds-get handler', () => {
   })
 
   it('the fetch fails with timeout error', async () => {
-    await expect(handler()).rejects.toThrow('HTTP Error Response')
+    await expect(handler()).rejects.toThrow('HTTP Error Response: 408 Request Timeout')
   })
 })
